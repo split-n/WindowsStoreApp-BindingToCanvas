@@ -41,12 +41,6 @@
                         <Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
                     </ItemsPanelTemplate>
                 </prismApp3:CanvasPositionBindableItemsControl.ItemsPanel>
-                <prismApp3:CanvasPositionBindableItemsControl.ItemContainerStyle>
-                    <Style TargetType="FrameworkElement">
-                        <Setter Property="Canvas.Top" Value="{Binding X}"/>
-                        <Setter Property="Canvas.Left" Value="{Binding Y}"/>
-                    </Style>
-                </prismApp3:CanvasPositionBindableItemsControl.ItemContainerStyle>
                 <prismApp3:CanvasPositionBindableItemsControl.ItemTemplate>
                     <DataTemplate>
                         <TextBlock><Run Text="{Binding X}"/>,<Run Text="{Binding Y}"/></TextBlock>
