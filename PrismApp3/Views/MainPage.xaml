@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="using:Microsoft.Practices.Prism.StoreApps"
+    xmlns:prismApp3="using:PrismApp3"
     mc:Ignorable="d"
     prism:ViewModelLocator.AutoWireViewModel="True">
 
@@ -32,24 +33,24 @@
         </Grid.RowDefinitions>
         
         <Canvas Grid.Row="1">
-            <ItemsControl ItemsSource="{Binding Points}">
-                <ItemsControl.ItemsPanel>
+            <prismApp3:CanvasPositionBindableItemsControl ItemsSource="{Binding Points}">
+                <prismApp3:CanvasPositionBindableItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
                     </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemContainerStyle>
+                </prismApp3:CanvasPositionBindableItemsControl.ItemsPanel>
+                <prismApp3:CanvasPositionBindableItemsControl.ItemContainerStyle>
                     <Style TargetType="FrameworkElement">
                         <Setter Property="Canvas.Top" Value="{Binding X}"/>
                         <Setter Property="Canvas.Left" Value="{Binding Y}"/>
                     </Style>
-                </ItemsControl.ItemContainerStyle>
-                <ItemsControl.ItemTemplate>
+                </prismApp3:CanvasPositionBindableItemsControl.ItemContainerStyle>
+                <prismApp3:CanvasPositionBindableItemsControl.ItemTemplate>
                     <DataTemplate>
                         <TextBlock><Run Text="{Binding X}"/>,<Run Text="{Binding Y}"/></TextBlock>
                     </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+                </prismApp3:CanvasPositionBindableItemsControl.ItemTemplate>
+            </prismApp3:CanvasPositionBindableItemsControl>
         </Canvas>
 
         <!-- Back button and page title -->
