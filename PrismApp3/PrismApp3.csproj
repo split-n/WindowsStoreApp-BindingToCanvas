@@ -118,6 +118,7 @@
     </AppxManifest>
     <None Include="packages.config" />
     <None Include="PrismApp3_TemporaryKey.pfx" />
+    <None Include="SampleDataSource.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.scale-100.png" />
