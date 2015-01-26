@@ -36,12 +36,10 @@
 
         <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Image x:Name="image" Source="{Binding ImageUri}" Stretch="Uniform"/>
-            <prismApp3:CanvasPositionBindableItemsControl ItemsSource="{Binding Points}" 
-                                                          BorderBrush="#FF008BFF" BorderThickness="2">
-
+            <prismApp3:CanvasPositionBindableItemsControl ItemsSource="{Binding Points}" >
                 <prismApp3:CanvasPositionBindableItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                        <Canvas Background="#263D46FF"  />
                     </ItemsPanelTemplate>
                 </prismApp3:CanvasPositionBindableItemsControl.ItemsPanel>
                 <prismApp3:CanvasPositionBindableItemsControl.ItemTemplate>
