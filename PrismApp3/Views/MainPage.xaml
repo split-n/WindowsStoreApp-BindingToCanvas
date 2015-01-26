@@ -33,9 +33,12 @@
             <RowDefinition Height="140"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        <Canvas Grid.Row="1">
-            <prismApp3:CanvasPositionBindableItemsControl ItemsSource="{Binding Points}">
+
+        <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Image x:Name="image" Source="{Binding ImageUri}" Stretch="Uniform"/>
+            <prismApp3:CanvasPositionBindableItemsControl ItemsSource="{Binding Points}" 
+                                                          BorderBrush="#FF008BFF" BorderThickness="2">
+
                 <prismApp3:CanvasPositionBindableItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
@@ -43,11 +46,11 @@
                 </prismApp3:CanvasPositionBindableItemsControl.ItemsPanel>
                 <prismApp3:CanvasPositionBindableItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock><Run Text="{Binding X}"/>,<Run Text="{Binding Y}"/></TextBlock>
+                        <TextBlock Foreground="#FF00763B" FontSize="36" FontWeight="Bold"><Run Text="{Binding Left}"/>,<Run Text="{Binding Top}"/></TextBlock>
                     </DataTemplate>
                 </prismApp3:CanvasPositionBindableItemsControl.ItemTemplate>
             </prismApp3:CanvasPositionBindableItemsControl>
-        </Canvas>
+        </Grid>
 
         <!-- Back button and page title -->
         <Grid>

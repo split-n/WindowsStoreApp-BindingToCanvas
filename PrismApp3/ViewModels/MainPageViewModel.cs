@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using Windows.Foundation;
 using Microsoft.Practices.Prism.StoreApps;
 using Microsoft.Practices.Prism.StoreApps.Interfaces;
@@ -9,24 +10,46 @@ namespace PrismApp3.ViewModels
     {
         private INavigationService _navigationService;
 
-        private ObservableCollection<Point> _points;
+        private ObservableCollection<PointViewModel> _points;
 
-        public ObservableCollection<Point> Points
+        public ObservableCollection<PointViewModel> Points
         {
             get { return _points; }
             private set { SetProperty(ref _points, value); }
         }
 
+        private string _imageUri;
+        public string ImageUri
+        {
+            get { return _imageUri; }
+            private set { SetProperty(ref _imageUri, value); }
+        }
+
+
 
         public MainPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            Points = new ObservableCollection<Point> {
-                new Point(100, 10),
-                new Point(50, 100),
-                new Point(350, 220),
-                new Point(120, 500)
+            Points = new ObservableCollection<PointViewModel> {
+                new PointViewModel(100, 10),
+                new PointViewModel(50, 100),
+                new PointViewModel(350, 220),
+                new PointViewModel(120, 500)
             };
+            ImageUri = "ms-appx:///2000x2000.png";
+        }
+
+        public class PointViewModel
+        {
+            public int Top { get; private set; }
+
+            public int Left { get; private set; }
+
+            public PointViewModel(int top,int left)
+            {
+                Top = top;
+                Left = left;
+            }
         }
     }
 }

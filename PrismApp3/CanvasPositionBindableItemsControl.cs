@@ -16,8 +16,8 @@ namespace PrismApp3
         {
             base.PrepareContainerForItemOverride(element, item);
             FrameworkElement source = element as FrameworkElement;
-            source.SetBinding(Canvas.TopProperty, new Binding { Path = new PropertyPath("Y") });
-            source.SetBinding(Canvas.LeftProperty, new Binding { Path = new PropertyPath("X") });
+            source.SetBinding(Canvas.TopProperty, new Binding { Path = new PropertyPath("Top") });
+            source.SetBinding(Canvas.LeftProperty, new Binding { Path = new PropertyPath("Left") });
         }
     }
 }
