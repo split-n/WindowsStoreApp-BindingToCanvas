@@ -121,6 +121,8 @@
     <None Include="SampleDataSource.json" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="2000x2000.png" />
+    <Content Include="400x400.png" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
