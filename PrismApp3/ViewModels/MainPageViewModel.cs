@@ -31,10 +31,12 @@ namespace PrismApp3.ViewModels
         {
             _navigationService = navigationService;
             Points = new ObservableCollection<PointViewModel> {
-                new PointViewModel(100, 10),
-                new PointViewModel(50, 100),
-                new PointViewModel(350, 220),
-                new PointViewModel(120, 500)
+                new PointViewModel(0, 0),
+                new PointViewModel(100, 50),
+                new PointViewModel(400, 800),
+                new PointViewModel(500, 1000),
+                new PointViewModel(1000, 500),
+                new PointViewModel(100, 1300)
             };
             ImageUri = "ms-appx:///2000x2000.png";
         }
@@ -45,7 +47,7 @@ namespace PrismApp3.ViewModels
 
             public int Left { get; private set; }
 
-            public PointViewModel(int top,int left)
+            public PointViewModel(int top, int left)
             {
                 Top = top;
                 Left = left;

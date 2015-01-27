@@ -34,21 +34,25 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <Image x:Name="image" Source="{Binding ImageUri}" Stretch="Uniform"/>
-            <prismApp3:CanvasPositionBindableItemsControl ItemsSource="{Binding Points}" >
-                <prismApp3:CanvasPositionBindableItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <Canvas Background="#263D46FF"  />
-                    </ItemsPanelTemplate>
-                </prismApp3:CanvasPositionBindableItemsControl.ItemsPanel>
-                <prismApp3:CanvasPositionBindableItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Foreground="#FF00763B" FontSize="36" FontWeight="Bold"><Run Text="{Binding Left}"/>,<Run Text="{Binding Top}"/></TextBlock>
-                    </DataTemplate>
-                </prismApp3:CanvasPositionBindableItemsControl.ItemTemplate>
-            </prismApp3:CanvasPositionBindableItemsControl>
-        </Grid>
+        <Viewbox Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Grid>
+                <Image  Source="{Binding ImageUri}" Stretch="Fill" />
+                <prismApp3:CanvasPositionBindableItemsControl ItemsSource="{Binding Points}" >
+                    <prismApp3:CanvasPositionBindableItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Canvas Background="#263D46FF"  />
+                        </ItemsPanelTemplate>
+                    </prismApp3:CanvasPositionBindableItemsControl.ItemsPanel>
+                    <prismApp3:CanvasPositionBindableItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Foreground="#FF00763B" FontSize="36" FontWeight="Bold"><Run Text="{Binding Left}"/>,<Run Text="{Binding Top}"/></TextBlock>
+                        </DataTemplate>
+                    </prismApp3:CanvasPositionBindableItemsControl.ItemTemplate>
+                </prismApp3:CanvasPositionBindableItemsControl>
+            </Grid>
+
+        </Viewbox>
+
 
         <!-- Back button and page title -->
         <Grid>
